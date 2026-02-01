@@ -1,0 +1,8 @@
+{
+  "name": "kaggle-tools",
+  "version": "1.0.0",
+  "description": "Kaggle CLI tools for Claude Code - manage notebooks, check status, view results",
+  "author": "goldbar123467",
+  "repository": "https://github.com/goldbar123467/Kaggle_Ai_Agent_Skill",
+  "commands": ["commands/kaggle.md"]
+}
