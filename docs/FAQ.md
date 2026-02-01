@@ -1,5 +1,87 @@
 # Frequently Asked Questions
 
+## Why Use This?
+
+### What problem does this solve?
+
+**The old way (without this skill):**
+```bash
+# Check if your kernel is done
+kaggle kernels status myname/my-kernel
+
+# Download the results
+kaggle kernels output myname/my-kernel -p ./outputs
+
+# Now manually open the parquet file somehow...
+python -c "import pandas as pd; print(pd.read_parquet('./outputs/submission.parquet'))"
+
+# Compare against answers manually...
+# Check logs manually...
+# Repeat 50 times during a competition...
+```
+
+**The new way (with this skill):**
+```
+/kaggle results myname/my-kernel
+```
+
+That's it. One command. Beautifully formatted. Automatically compared against reference answers. Done.
+
+### Does it actually make Kaggle easier?
+
+**Yes.** Here's the honest breakdown:
+
+| Task | Without Skill | With Skill |
+|------|---------------|------------|
+| Check kernel status | Terminal → type command → read raw output | `/kaggle status` → clear summary |
+| View results | Download → install pyarrow → write Python → parse → format | `/kaggle results` → instant table |
+| Compare answers | Manual spreadsheet work | Automatic with accuracy % |
+| Push notebook | Remember exact command + flags | `/kaggle push` with safety check |
+
+**Time saved per competition:** Hours. Seriously.
+
+### Who is this for?
+
+**Beginners:**
+- You don't need to memorize Kaggle CLI commands
+- Just type `/kaggle` and Claude guides you
+- Plain English, no terminal expertise required
+
+**Intermediate users:**
+- Faster iteration during competitions
+- Instant result comparison without writing scripts
+- One less context switch (stay in Claude Code)
+
+**Experts:**
+- Integrates into your AI-assisted workflow
+- Batch operations through natural language
+- Extend it - it's open source
+
+### How does it actually work?
+
+Simple version:
+1. You type `/kaggle results my-kernel`
+2. Claude runs the Kaggle CLI commands for you
+3. Claude parses the output (parquet files, logs)
+4. Claude formats it nicely and shows you
+
+Think of it as having an assistant who knows all the Kaggle commands so you don't have to.
+
+### Is this official Kaggle software?
+
+No. This is a community plugin for Claude Code that uses the official [Kaggle API](https://github.com/Kaggle/kaggle-api). It's a convenience layer, not a replacement.
+
+### Will this help me win competitions?
+
+This tool helps you **work faster**, not smarter. You still need:
+- Good models
+- Smart feature engineering
+- Domain knowledge
+
+But you'll spend less time fighting with CLI commands and more time on the actual problem.
+
+---
+
 ## Setup & Installation
 
 ### How do I set up Kaggle credentials?
