@@ -127,6 +127,50 @@ Kaggle_Ai_Agent_Skill/
 └── examples/           # Usage examples
 ```
 
+## Why Use This?
+
+### The Old Way (without this skill)
+```bash
+# Check if your kernel is done
+kaggle kernels status myname/my-kernel
+
+# Download the results
+kaggle kernels output myname/my-kernel -p ./outputs
+
+# Now manually open the parquet file somehow...
+python -c "import pandas as pd; print(pd.read_parquet('./outputs/submission.parquet'))"
+
+# Compare against answers manually...
+# Check logs manually...
+# Repeat 50 times during a competition...
+```
+
+### The New Way
+```
+/kaggle results myname/my-kernel
+```
+
+**That's it.** One command. Beautifully formatted. Automatically compared. Done.
+
+### Time Saved
+
+| Task | Without Skill | With Skill |
+|------|---------------|------------|
+| Check status | Terminal commands + parse output | `/kaggle status` → clear summary |
+| View results | Download → Python → parse → format | `/kaggle results` → instant table |
+| Compare answers | Manual spreadsheet work | Automatic with accuracy % |
+| Push notebook | Remember flags + syntax | `/kaggle push` with safety check |
+
+### Who Is This For?
+
+| Level | How It Helps |
+|-------|--------------|
+| **Beginners** | Don't memorize commands - just type `/kaggle` and follow the prompts |
+| **Intermediate** | Faster iteration, instant results, stay in your flow |
+| **Experts** | Integrates into AI workflow, open source, extend it yourself |
+
+---
+
 ## FAQ
 
 **Q: Why does it ask before pushing/submitting?**
@@ -140,6 +184,12 @@ A: Yes! It works with all Kaggle competitions and notebooks.
 
 **Q: What if I don't have pyarrow installed?**
 A: Run `pip install pyarrow pandas` to enable parquet reading.
+
+**Q: Is this official Kaggle software?**
+A: No. It's a community plugin for Claude Code that uses the official [Kaggle API](https://github.com/Kaggle/kaggle-api).
+
+**Q: Will this help me win competitions?**
+A: It helps you **work faster**, not smarter. You still need good models and ideas - but you'll spend less time fighting CLI commands.
 
 See [docs/FAQ.md](docs/FAQ.md) for more questions.
 
